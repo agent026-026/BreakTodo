@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BreakTodo · AI 拆解大目标为可勾选清单 · 产品与支持</title>
+  <meta name="description" content="BreakTodo：在 iPhone 上用自然语言描述目标，通过 OpenRouter 调用 AI 生成分组待办。API Key 与清单存于本机。">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --fg: #1a1a1a;
+      --muted: #555;
+      --bg: #fafafa;
+      --card: #fff;
+      --border: #e0e0e0;
+      --link: #0969da;
+      --accent: #2563eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fg: #f0f0f0;
+        --muted: #aaa;
+        --bg: #121212;
+        --card: #1e1e1e;
+        --border: #333;
+        --link: #58a6ff;
+        --accent: #60a5fa;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", sans-serif;
+      line-height: 1.65;
+      color: var(--fg);
+      background: var(--bg);
+      margin: 0;
+      padding: 1.5rem 1rem 3rem;
+      max-width: 44rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    h1 { font-size: 1.5rem; margin: 0 0 0.5rem; font-weight: 600; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin: 0; }
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      margin-top: 0.75rem;
+    }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.35rem;
+      margin-bottom: 1.25rem;
+    }
+    h2 { font-size: 1.1rem; margin: 0 0 0.75rem; font-weight: 600; }
+    p, ul { margin: 0.5rem 0; font-size: 0.95rem; }
+    ul { padding-left: 1.25rem; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .compare {
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border);
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BreakTodo</h1>
+    <p class="subtitle">把大目标拆成可勾选的待办清单 · iOS · 自备 OpenRouter API</p>
+    <span class="badge">效率工具</span>
+  </header>
+
+  <section id="product">
+    <h2>产品说明</h2>
+    <p>BreakTodo 帮助你将「一件大事」或复杂目标写成自然语言描述，再通过 <strong>OpenRouter</strong> 调用所选 AI 模型，生成带分组的<strong>可勾选子任务</strong>。你可以在预览后决定是否加入列表，并在日常使用中逐项完成、左滑删除任务或整组。</p>
+    <p>同类体验中，网页端的 <strong>Goblin Tools · Magic Todo</strong>（魔法待办）同样以「输入一段话 → 拆步骤」著称，是最直观的参考。BreakTodo 侧重<strong>手机上的原生清单体验</strong>：数据默认保存在本设备，并可结合你填写的「个人情况」（可选）让拆解更贴合实际约束。</p>
+  </section>
+
+  <section id="features">
+    <h2>功能概要</h2>
+    <ul>
+      <li>自然语言描述目标，AI 生成分组与可勾选任务。</li>
+      <li>使用用户自备的 <strong>OpenRouter API Key</strong>；可在设置中配置模型 ID 与个人情况文本。</li>
+      <li>清单与密钥存储于本机；网络请求直连 OpenRouter（HTTPS）。</li>
+      <li>支持浅色 / 深色 / 跟随系统外观。</li>
+    </ul>
+  </section>
+
+  <section id="support">
+    <h2>支持与反馈</h2>
+    <p>技术支持、建议与问题反馈请通过 GitHub 仓库联系。</p>
+    <p id="repo-link"><a href="https://github.com/agent026-026/BreakTodo/">https://github.com/agent026-026/BreakTodo/</a></p>
+  </section>
+
+  <section id="privacy">
+    <h2>隐私与数据</h2>
+    <ul>
+      <li>开发者<strong>不通过自有服务器</strong>收集本应用内的 API Key；密钥由你保存在本设备。</li>
+      <li>在你<strong>主动发起生成</strong>时，目标描述与相关上下文会通过 HTTPS 发送至 OpenRouter 及所选模型提供方；请参阅 <a href="https://openrouter.ai/privacy" rel="noopener noreferrer">OpenRouter 隐私政策</a> 及对应模型服务条款。</li>
+      <li>请确保你对输入内容拥有合法权利，并理性采纳 AI 建议。</li>
+    </ul>
+  </section>
+
+  <section id="requirements">
+    <h2>系统与网络</h2>
+    <ul>
+      <li>需要可访问 <strong>openrouter.ai</strong> 的网络环境，以及有效的 OpenRouter API Key。</li>
+    </ul>
+  </section>
+
+  <section id="compare" class="compare">
+    <h2>与常见「魔法待办」类产品的关系</h2>
+    <p><strong>Magic Todo</strong> 等产品让「AI 拆任务」被广泛认知。BreakTodo 在能力上同属「描述 → 结构化步骤」，但在<strong>原生客户端、本地清单管理、OpenRouter 与模型自选</strong>等方向做了差异化，适合希望长期在手机上维护同一套清单的用户。</p>
+  </section>
+
+  <footer>
+    <p>© 2026 BreakTodo</p>
+  </footer>
+
+  <script>
+    (function () {
+      var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/+$/, '');
+      var seg = path.split('/').filter(Boolean);
+      var user = 'YOUR_USERNAME';
+      var repo = 'YOUR_REPO';
+      if (seg.length >= 2 && window.location.hostname.endsWith('github.io')) {
+        user = seg[0];
+        repo = seg[1];
+      }
+      if (user !== 'YOUR_USERNAME' && repo !== 'YOUR_REPO') {
+        var url = 'https://github.com/' + user + '/' + repo;
+        var el = document.getElementById('repo-link');
+        if (el) {
+          el.innerHTML = '<a href="' + url + '">' + url + '</a>';
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
