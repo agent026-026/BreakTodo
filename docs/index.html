@@ -79,6 +79,19 @@
       font-size: 0.8rem;
       color: var(--muted);
     }
+    section h3 {
+      font-size: 1rem;
+      margin: 1.1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    section h3:first-of-type {
+      margin-top: 0;
+    }
+    .disclaimer-lead {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
   </style>
 </head>
 <body>
@@ -112,10 +125,61 @@
 
   <section id="privacy">
     <h2>隐私与数据</h2>
+    <p class="disclaimer-lead">以下为 BreakTodo 在处理你的内容与调用 AI 时的数据说明。关于 OpenRouter 及各模型提供方对 API 数据的处理，须以其 <a href="https://openrouter.ai/privacy" rel="noopener noreferrer">隐私政策</a>、<a href="https://openrouter.ai/terms" rel="noopener noreferrer">服务条款</a> 及各服务商公开文档为准。</p>
+
+    <h3>我们处理哪些数据</h3>
     <ul>
-      <li>开发者<strong>不通过自有服务器</strong>收集本应用内的 API Key；密钥由你保存在本设备。</li>
-      <li>在你<strong>主动发起生成</strong>时，目标描述与相关上下文会通过 HTTPS 发送至 OpenRouter 及所选模型提供方；请参阅 <a href="https://openrouter.ai/privacy" rel="noopener noreferrer">OpenRouter 隐私政策</a> 及对应模型服务条款。</li>
-      <li>请确保你对输入内容拥有合法权利，并理性采纳 AI 建议。</li>
+      <li>你在设备上输入或导入的<strong>待办清单、分组与勾选状态</strong>默认保存在本机，用于应用内的展示与管理。</li>
+      <li>你在<strong>设置</strong>中填写的 <strong>OpenRouter API Key</strong>、所选<strong>模型 ID</strong>、以及可选的<strong>「个人情况」等说明文字</strong>保存在本机，用于组装网络请求。</li>
+      <li>本应用<strong>不会</strong>在设备上收集与你身份绑定的生物特征数据；拆解功能处理的是<strong>你主动输入的文本</strong>（目标描述及上述可选上下文），而非图像或音视频。</li>
+      <li>仅在你<strong>主动点击生成 / 发起拆解请求</strong>时，应用会将当次请求所需的<strong>文本内容</strong>（通常包括你的目标描述、设置中的个人情况片段、以及为调用模型所必需的参数）通过<strong>加密连接（HTTPS）</strong>直接发送至 <strong>OpenRouter</strong>；OpenRouter 会根据其路由规则将请求转发至你所选模型对应的提供方。</li>
+    </ul>
+
+    <h3>我们如何使用这些数据</h3>
+    <ul>
+      <li>仅用于调用第三方大语言模型，将你的描述<strong>转化为分组标题与可勾选任务列表</strong>，并在应用内展示供你预览或保存。</li>
+      <li><strong>不会</strong>将你的内容用于开发者侧的广告定向、用户画像构建，或与本应用「拆解待办」功能无关的目的；开发者<strong>不运营</strong>用于中转或存储你对话内容的自有后端服务器。</li>
+    </ul>
+
+    <h3>是否与第三方共享、数据路径</h3>
+    <ul>
+      <li><strong>会。</strong>为实现 AI 拆解，在你发起请求时，相关<strong>文本</strong>会先由你的设备发送至 <strong>OpenRouter</strong>（openrouter.ai），再由其转发至所选<strong>模型提供方</strong>。数据路径为：<strong>你的 iPhone / iPad 设备 → OpenRouter → 所选 AI 模型服务</strong>。</li>
+      <li>各环节服务商对该等数据的存储、日志与留存政策由其各自条款约束；我们不控制第三方内部日志细则，请务必查阅其官方说明。</li>
+    </ul>
+
+    <h3>保留期限</h3>
+    <ul>
+      <li><strong>你的设备上</strong>：清单、API Key、模型与个人情况类设置保存在应用沙盒内，直至你删除应用、清除应用数据或在设置中移除密钥。</li>
+      <li><strong>OpenRouter / 模型侧</strong>：请求与响应的处理与留存遵循对应产品的现行政策，请以 OpenRouter 及各模型提供方文档为准。</li>
+    </ul>
+
+    <h3>你的选择与撤回</h3>
+    <ul>
+      <li>你可随时在设置中<strong>移除 API Key</strong>或<strong>停止使用「生成 / 拆解」</strong>功能；未发起请求时，应用不会向 OpenRouter 传输用于拆解的文本内容。</li>
+      <li>请确保你对输入内容拥有合法权利，勿提交违法、侵权或保密义务不允许外传的信息。</li>
+    </ul>
+  </section>
+
+  <section id="ai-declaration">
+    <h2>AI 与生成式内容声明</h2>
+    <p class="disclaimer-lead">BreakTodo 的核心能力依赖<strong>生成式人工智能（大语言模型）</strong>将自然语言目标转换为结构化任务列表。使用本功能前，请认真阅读以下声明。</p>
+
+    <h3>生成内容的性质</h3>
+    <ul>
+      <li>应用展示的分组标题、子任务及排序建议等均<strong>由 AI 模型自动生成</strong>，并非人工撰写或事实核查结果。</li>
+      <li>输出可能存在<strong>错误、遗漏、歧义、过时信息或与你的真实处境不符</strong>的情况，亦可能反映训练数据中的统计性偏见；请务必<strong>自行审阅、编辑与取舍</strong>后再纳入你的实际计划。</li>
+    </ul>
+
+    <h3>非专业建议</h3>
+    <ul>
+      <li>AI 生成的拆解步骤<strong>不构成</strong>且<strong>不能替代</strong>法律、医疗、心理、金融、安全等专业领域的建议、诊断或治疗方案。</li>
+      <li>涉及人身安全、合规义务、重大疾病、心理健康危机、重大财务决定等事项，请咨询具备资质的专业人士或相关服务机构。</li>
+    </ul>
+
+    <h3>你的责任与合理使用</h3>
+    <ul>
+      <li>你对输入内容的合法性及基于生成结果所采取的行动负责；请勿将输出用于违法、欺诈、骚扰或侵犯他人权益的行为。</li>
+      <li>模型可用性、输出风格与政策以 <strong>OpenRouter</strong> 及所选<strong>模型提供方</strong>的当前服务为准；因第三方服务变更、地域限制或网络原因导致的不可用，以服务商规则为准。</li>
     </ul>
   </section>
 
