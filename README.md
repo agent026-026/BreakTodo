@@ -1,4 +1,4 @@
-# BreakTodo - BreakTodo - AI 拆分任务 | ADHD 必备
+# BreakTodo - AI 拆分任务 | ADHD 必备 ｜ Magic Todo 产品
 
 适用于 **iOS** 的效率应用：用自然语言写下一件大事或复杂目标，通过 **OpenRouter** 调用你选择的 AI 模型，将描述拆成「分组标题 + 多条可勾选子任务」，便于按步执行、逐项打勾。API Key 与清单数据默认保存在本设备。
 
